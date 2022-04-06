@@ -6,19 +6,11 @@ interface Props {
 }
 
 export function PostInList({post}: Props) {
-    const [postTitle, setPostTitle] = useState("");
-    function handleTitle (e:ChangeEvent<HTMLInputElement>) {
-        setPostTitle(e.target.value);
-    }
-    const [postThought, setPostThought] = useState(" ");
-    function handlePostThought (e: ChangeEvent<HTMLInputElement>) {
-        setPostThought(e.target.value);
-    }
     
     return (
         <div className = "PostList">
-        <h2>{postTitle}</h2>
-        <p>{postThought}</p>
+        <h2>{post.title}</h2>
+        <p>{post.thought}</p>
         </div>
     )
 }
