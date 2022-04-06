@@ -14,7 +14,7 @@ export function PostInList({post}: Props) {
     function handlePostThought (e: ChangeEvent<HTMLInputElement>) {
         setPostThought(e.target.value);
     }
-
+    
     return (
         <div className = "PostList">
         <h2>{postTitle}</h2>

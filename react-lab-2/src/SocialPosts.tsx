@@ -1,5 +1,9 @@
 import React, {useState} from "react";
 import Post from './models/Post'
+import { PostInList } from "./PostInList";
+import './SocialPosts.css'
+import PostForm from "./PostForm";
+import { title } from "process";
 
 
  function SocialPosts( ){
@@ -10,9 +14,18 @@ import Post from './models/Post'
         }
      ]);
 
-    return
-    (<div className="SocialPosts__container">
-        <p>{posts}</p>
+     function handleAdd(post: Post) {
+         setPosts(prev => [...prev, post])
+     }
+
+    return(
+    <div className="SocialPosts__container">
+        <PostForm onSubmit={handleAdd}/>
+        <ul>
+            {posts.map((post,  i) =>
+            <PostInList key = {i}
+                               post = {post}/> )}
+        </ul>
     </div>)
 
 }
